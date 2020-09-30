@@ -1,0 +1,42 @@
+class Person{
+  constructor(){
+    this.name='MAX';
+  }
+  print(){
+    console.log(this.name);
+  } 
+}
+
+const person=new Person();
+person.print();
+
+
+
+class Gender{
+  constructor(){
+    this.gender='MALE';
+  }
+  printGender(){
+    console.log(this.gender);
+  } 
+}
+
+
+///////////////understanding the concept of inheritance and super keyword///////////////////
+
+class Personn extends Gender{
+  constructor(){
+    //super keyword is used to get access to the functions and variables of parent class
+    super();
+    this.name='DEVDAS';
+    //can also change super class variables and keywords
+    //this.gender='FEMALE';
+  }
+  printName(){
+    console.log(this.name);
+  } 
+}
+
+const personn=new Personn();
+personn.printName();
+personn.printGender();
