@@ -1,0 +1,38 @@
+var myname="SHUBAHM";
+console.log(myname);
+
+myname="saket";
+console.log(myname);
+
+myname=1234;
+console.log(myname);
+
+const mmyname="saket";
+console.log(mmyname);
+
+// mmyname="sakeasast";
+// console.log(mmyname);
+
+
+//direct function
+function printmyname(name)
+{
+  console.log(name);
+}
+printmyname("shubham");
+
+
+//arrow function
+const print=(name)=>{
+  console.log(name);
+}
+
+print("sachdeva");
+
+
+//arrow function returning
+const multiply=(number1, number2)=>{
+  return number1 * number2;
+}
+
+console.log(multiply(3,5));
