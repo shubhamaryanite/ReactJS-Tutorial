@@ -1,0 +1,28 @@
+//properties are like variable attached to classes/objects
+
+//methods are like fuctions attached to class/objects
+
+//ES6 method to use constructir and super class
+//don't need to use super keyword
+
+class Gender{
+  gender='MALE';
+
+  printGender=()=>{
+    console.log(this.gender);
+  } 
+}
+
+
+class Personn extends Gender
+{
+  name='DEVDAS';
+
+  printName=()=>{
+    console.log(this.name);
+  } 
+}
+
+const personn=new Personn();
+personn.printName();
+personn.printGender();
