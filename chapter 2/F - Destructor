@@ -1,0 +1,20 @@
+//////////////////destructuring/////////////////////
+
+//easily extract array elements or object properties and store them in variables
+//just like spread properties
+//extract only single properties
+
+const num=[1,2,3];
+
+//will take place accordingly
+//compare th given below both examples
+
+[n1, ,n3]=num;
+console.log(n1,n3);
+
+[num1, num2]=num;
+console.log(num1, num2);
+
+{Name}={name='MAX', age=21};
+console.log(Name);//MAX
+console.log(age);//undefined
