@@ -1,0 +1,40 @@
+////////// SPREAD & REST Method /////////
+/// USE ... ( 3 DOTS TO IMPORT THE ELEMENT AND VALUES FROM EXISTING FUNCTION OR ARRAY ) /////////
+
+//////////////// ... used in array /////////////////
+
+num1=[1,2,3,4];
+
+num2=[num1,5,6,7];
+
+console.log("normal will include whole num1 array as one object",num2);
+
+num3=[...num1,5,6,7];
+
+console.log("... will include each element of num1 array as single objects",num3);
+
+///////////// ... used in const function ////////////////// 
+
+const person={
+  name:"SHUBHAM"
+};
+
+const info={
+  ...person,
+    age:21
+};
+
+console.log(info);
+
+
+//////////////// used in arrow function /////////////////////
+
+const filter =(...args) => {
+  //will sort the array and return
+  //return args.sort();
+  
+  //will filter all 1 and only print 1s
+  return args.filter(a => a===1);
+}
+
+console.log(filter(3,1,6,2,8));
