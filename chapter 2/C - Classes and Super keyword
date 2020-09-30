@@ -12,6 +12,11 @@ person.print();
 
 
 
+
+
+
+///////////////understanding the concept of inheritance and super keyword///////////////////
+
 class Gender{
   constructor(){
     this.gender='MALE';
@@ -20,9 +25,6 @@ class Gender{
     console.log(this.gender);
   } 
 }
-
-
-///////////////understanding the concept of inheritance and super keyword///////////////////
 
 class Personn extends Gender{
   constructor(){
