@@ -1,0 +1,37 @@
+//Exports and imports (modules)
+
+
+
+//content written in person.js
+//normal js file
+
+const person={
+  name: 'max'
+};
+
+//default export from this file means
+//that by default always this function will be imported into another file
+export default person
+
+
+
+//content written in utility.js
+//file showing how to import js file
+
+export const clean=()=>{
+  
+}
+
+export const baseData=10;
+
+
+//content written in app.js file
+//how to import multiple files
+
+import person from './person.js'
+//in both condition(upper & lower) - imports same file as default 
+import prs from './person.js'
+
+//name export for specific export
+import {baseData} from './utility.js'
+import {clean} from './utility.js'
