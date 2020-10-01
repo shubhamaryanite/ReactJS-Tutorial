@@ -1,0 +1,39 @@
+///////////written in Person.js file present in Person folder///////////
+
+//to import react features
+
+import React from 'react';
+
+const Person = () => {
+    return <h2>This is second component</h2>;
+};
+
+export default Person;
+
+
+
+///////////written in App.js file////////////////
+
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+////IMPORTED THE Person file////
+import Person from './Person/Person'
+
+
+
+function App(){
+  return (
+    <div className='App'>
+      <h1>Shubham Kumar Singh</h1>
+      <p>Above is First Componet from main App.js file</p> 
+      <p>Below is second component from Person.js file</p>
+      <!--running the Person component--->
+      <Person/>
+    </div>
+  );
+}
+
+
+export default App;
