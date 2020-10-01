@@ -1,0 +1,31 @@
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Person from './Person/Person'
+
+/////can implement any of the below function
+///  1st function is being created using createElement function of React
+///  2nd function is being created using normal changing the root element 
+
+////////// 1st ///////////
+
+function App() 
+{
+  return React.createElement('div',{className:'App'},React.createElement('h1',null,'SHUBHAM KUMAR SINGH'));
+}
+
+
+////////// 2nd ///////////
+
+function App(){
+  return (
+    <div className='App'>
+      <h1>Shubham Kumar Singh</h1>
+      <p>Above is First Componet from main App.js file</p> 
+      <p>Below is second component from Person.js file</p>
+      <Person/>
+    </div>
+  );
+}
+
+export default App;
