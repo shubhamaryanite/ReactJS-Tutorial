@@ -1,0 +1,39 @@
+//////First Ever React Program/////////
+//////After making file////////////
+
+
+///commands to make a new file/////////
+//run the following command in sequence in command prompt//
+//run the command after opening the file where you want to setup your react app
+
+// ********** create-react-app react-complete-guide--scripts-version 1.1.5
+// ********** npm start
+
+
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Person from './Person/Person'
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+export default App;
