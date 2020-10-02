@@ -1,0 +1,73 @@
+////////////use of hooks///////
+///// use useState////////
+
+
+//////////////////////// written in Person.js file of Person folder //////////////
+
+import React from 'react';
+
+const Person = (props) => {
+return(
+    <div>
+        <h2>{props.name} is {props.age} years old</h2>
+        <p>{props.children}</p>
+    </div>
+) 
+};
+
+export default Person;
+
+
+////////////////////////////// WRITTEN IN App.js file /////////////
+
+import React, { useState } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Person from './Person/Person'
+
+//use function instead of class to use hook property
+const App = (props) => {
+
+  const [personState, setPersonState] = useState(
+    {
+      persons : [
+        {name:"Shubham Kumar Singh" ,age: 21},
+        {name:"Saket Singh" ,age: 18},
+        {name:"Sri Vastava" ,age: 21}
+      ],
+      otherstate : 'some other state'
+    }
+  );
+
+  const switchNameHandler = () => {
+    setPersonState({
+      persons : [
+        {name:"KL Rahul" ,age: 34},
+        {name:"Saket Singh" ,age: 18},
+        {name:"Sri Vastava" ,age: 28}
+      ]
+    })
+  };
+
+  //can use multiple hooks useState to change the values
+  const [otherState, setOtherState] = useState('new value');
+
+  console.log(personState, otherState);
+
+    return (
+      <div className='App'>
+        <h1>Shubham Kumar Singh</h1>
+        <p>Above is First Componet from main App.js file</p> 
+        <p>Below is second component from Person.js file</p>
+        <p>Below is the example of how to use props</p>
+        <button onClick={switchNameHandler}>Switch Name</button>
+        <Person name={personState.persons[0].name} age={personState.persons[0].age}></Person>
+        <Person name={personState.persons[1].name} age={personState.persons[1].age}></Person>
+        <Person name={personState.persons[2].name} age={personState.persons[2].age}></Person>
+      </div>
+    );
+  
+  }
+  
+
+export default App;
