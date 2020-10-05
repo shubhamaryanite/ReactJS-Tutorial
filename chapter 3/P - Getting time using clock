@@ -1,0 +1,52 @@
+////////////written in Clock.jsx file of Practise folder /////////
+
+import React, {useState} from 'react';
+
+const Clock = () =>
+{
+    let newTime=new Date().toLocaleTimeString();  
+    
+    const [oldTime, setTime] = useState(newTime);
+    const UpdateTime = () => {
+        newTime=new Date().toLocaleTimeString();
+        setTime(newTime);
+    }
+    return(
+        <div>
+            <h1>{oldTime}</h1>
+            <button onClick={UpdateTime}>Get Time</button>
+        </div>
+    )
+};
+
+export default Clock;
+
+
+
+///////////written in App.js file ////////////
+
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import Login from './Login/Login';
+import Practise from './Practise/Practise';
+import Clock from './Practise/Clock';
+
+class App extends Component{
+
+
+
+  render(){
+
+    return (
+      <div>
+        <Clock></Clock>
+        <Login></Login>
+      </div>
+    );
+  }
+  }
+  
+
+
+export default App;
+
