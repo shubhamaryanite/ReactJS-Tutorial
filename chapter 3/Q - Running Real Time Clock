@@ -1,0 +1,54 @@
+/////////////////written in Runclock.jsx file of Practise folder ///////////
+
+import React, {useState} from 'react';
+
+
+const Runclock = () =>
+{
+    let time=new Date().toLocaleTimeString();  
+
+    const [oldTime, newTime] = useState(time);
+    const updateTime = () => {
+        time=new Date().toLocaleTimeString();
+        newTime(time);
+    };
+    setInterval(updateTime, 1000);
+    return(
+        <div>
+            <h1>{time}</h1>
+        </div>
+    )
+};
+
+export default Runclock;
+
+
+
+///////////written in App.js file////////////////
+
+
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import Login from './Login/Login';
+import Practise from './Practise/Practise';
+import Runclock from './Practise/Runclock';
+
+class App extends Component{
+
+
+
+  render(){
+
+    return (
+      <div>
+        <Runclock></Runclock>
+        <Login></Login>
+      </div>
+    );
+  }
+  }
+  
+
+
+export default App;
+
