@@ -1,0 +1,145 @@
+/////////////// written in Login.css ////////////////////////
+
+*{
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+    /* background-color: white; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+div{
+    border-radius: 20px;
+    align-content: center;
+    height:80vh;
+    width:60vh;
+    background-color: yellowgreen;
+    background: rgb(103, 214, 93);
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+
+button{
+    padding: 5px 20px;
+    line-height: 20px;
+    background: rgb(74, 177, 61);
+    color:white;
+    border: 2px solid rgb(60, 128, 29);
+    border-radius: 20px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    margin:auto;
+}
+
+input{
+    width: 100%;
+    height:30px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    margin:20px 0;
+    text-align: center;
+    border-radius: 20px;
+}
+
+h1{
+    color:white;
+    background: transparent;
+    text-shadow: 0 2px 2px black;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin:auto; */
+}
+
+
+
+
+///////////////////// written in Login.jsx file of Login Folder /////////////////
+
+
+
+import React, {useState} from 'react';
+
+import './Login.css';
+
+const Login = () =>
+{
+    const [name, setName] = useState("");
+    const [fullName, setFullName]=useState("");
+    const [lastName, setLastName]=useState("");
+    const [lastNameNew, setLastNameNew] = useState("");
+
+    const onSubmits = (event) =>{
+        event.preventDefault();
+        setFullName(name); 
+        setLastNameNew(lastName);
+    };
+
+    const inputEvent = (event) => {
+        //onchange always passes a value which can be accessed by using any parameter (here-event)
+        //console.log(event.target.value);
+        setName(event.target.value);
+    }
+
+    const inputEventTwo = (event) => {
+        setLastName(event.target.value);
+    };
+
+    return(
+        <div className="main_div">
+            <form onSubmit={onSubmits}>
+            <h1>Hello {fullName} {lastNameNew}</h1>
+            <input type="text" placeholder="Enter your name" onChange={inputEvent} value={name}></input>
+            <input type="text" placeholder="Enter your Last name" onChange={inputEventTwo} value={lastName}></input>
+            <button type="submit">Submit</button>
+            </form>
+        </div>
+    )
+}
+
+export default Login;
+
+
+
+
+
+
+
+/////////////// written in App.js /////////////////////
+
+
+
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import Login from './Login/Login.jsx';
+import Practise from './Practise/Practise';
+import Runclock from './Practise/Runclock';
+import Events from './Practise/Events';
+import Fomrs from './Practise/Form';
+
+class App extends Component{
+
+
+
+  render(){
+
+    return (
+      <div>
+        <Login></Login>
+      </div>
+    );
+  }
+  }
+  
+  
+export default App;
