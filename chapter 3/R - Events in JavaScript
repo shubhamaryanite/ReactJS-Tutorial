@@ -1,0 +1,68 @@
+/////////////written in Events.jsx file of Practise folder/////////////
+
+
+import React,{useState} from 'react';
+
+
+
+const Events = () => {
+    const purple="#8e44ad"
+    const [bg, setBg] = useState(purple);
+    
+    const name="Click Me";
+    const [oldname, setName] = useState(name);
+
+    const bgchange = () =>{
+        let newbg="#34495e";
+        setBg(newbg);
+        let newname="New BG-Color";
+        setName(newname);
+    }
+
+    const bgback = () =>{
+        setBg(purple);
+        let newname="Back to normal";
+        setName(newname);
+    }
+    return(
+        <div style={ { backgroundColor: bg } }>
+            {/* <button onClick={bgchange} onDoubleClick={bgback}>{oldname}</button>
+             */}
+             <button onMouseOver={bgchange} onMouseLeave={bgback}>{oldname}</button>
+        </div>
+    )
+};
+
+export default Events;
+
+
+
+/////////////written in App.js file//////////
+
+
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import Login from './Login/Login';
+import Practise from './Practise/Practise';
+import Runclock from './Practise/Runclock';
+import Events from './Practise/Events';
+
+class App extends Component{
+
+
+
+  render(){
+
+    return (
+      <div>
+        <Events></Events>
+        <Login></Login>
+      </div>
+    );
+  }
+  }
+  
+
+
+export default App;
+
