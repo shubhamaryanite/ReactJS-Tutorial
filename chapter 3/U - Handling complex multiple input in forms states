@@ -140,7 +140,7 @@ const Login = () =>
 
     const onSubmits = (event) =>{
         event.preventDefault();
-        alert("Form Submitted !!");
+        alert("Form Submitted !! "+ fullName.fname + fullName.lname);
     };
 
     return(
@@ -176,8 +176,6 @@ const Login = () =>
 }
 
 export default Login;
-
-
 
 
 
