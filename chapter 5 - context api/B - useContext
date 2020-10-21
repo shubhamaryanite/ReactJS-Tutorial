@@ -1,0 +1,110 @@
+//// simpler method in CompB.jsx than CompC.jsx ////
+/// use that instead of Redux for passing values ////////////
+
+///////// written in App.js file ////////////////////////
+
+import React from 'react';
+import Appp from './contextapi/Appp';
+
+function App() {
+  return (
+    <div className="App">
+      <Appp/>
+    </div>
+  );
+}
+
+export default App;
+
+/////////written in Appp.jsx file of contextapi folder /////////////////
+
+import React, { createContext } from 'react';
+import CompA from './CompA';
+
+const FirstName = createContext();
+const LastName = createContext();
+
+const App = () => {
+    return (
+        <>
+        <FirstName.Provider value={'Shubham'}>
+            <LastName.Provider value={'Singh'}>
+             <CompA/>
+             </LastName.Provider>
+        </FirstName.Provider>
+        </>
+    )
+};
+
+
+export default App;
+export {FirstName, LastName};
+
+
+/////////written in CompA.jsx file of contextapi folder /////////////////
+
+
+import React from 'react';
+import CompB from './CompB';
+
+const CompA = () => {
+    return(
+        <CompB/>
+    )
+};
+
+
+export default CompA;
+
+
+/////////written in CompB.jsx file of contextapi folder /////////////////
+
+
+import React, {useContext} from 'react';
+import CompC from './CompC';
+import {FirstName, LastName} from './Appp';
+
+const CompB = () => {
+    const fname = useContext(FirstName);
+    const lname = useContext(LastName);
+    return(
+        <>
+            <h1>My name is {fname} {lname}</h1>
+            <CompC/>
+        </>
+    )
+};
+
+
+export default CompB;
+
+
+/////////written in CompC.jsx file of contextapi folder /////////////////
+
+
+
+import React from 'react';
+import {FirstName, LastName} from './Appp';
+
+const CompC = () => {
+    return(
+        <>
+            <FirstName.Consumer>
+                {(fname) => {
+                    return (
+                        <LastName.Consumer>
+                            {(lname) => {
+                                return (
+                                    <h1>My name is {fname} {lname}</h1>
+                                );
+                            }}
+                        </LastName.Consumer>
+                    )
+                }}
+            </FirstName.Consumer>
+        </>   
+    )
+};
+
+
+export default CompC;
