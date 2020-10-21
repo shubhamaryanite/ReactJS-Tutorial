@@ -1,0 +1,43 @@
+///////////written in App.js file///////////
+
+
+import React from 'react';
+import Appp from './contextapi/Appp';
+
+function App() {
+  return (
+    <div className="App">
+      <Appp/>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+/////////written in Appp.jsx file of contextapi folder///////////////////////
+
+
+import React, { useState, useEffect } from 'react';
+
+
+const App = () => {
+    const [num, setnum] = useState(0);
+
+    useEffect( () => {
+        document.title=`${num} times being clicked`
+    });
+
+    return (
+        <>
+        <button onClick = { () => {setnum(num+1)} } >
+            click me {num}
+        </button>
+        <h1>Shubham Kumar Singh</h1>
+        </>
+    )
+};
+
+
+export default App;
