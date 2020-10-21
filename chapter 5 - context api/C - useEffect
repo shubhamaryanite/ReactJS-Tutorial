@@ -1,0 +1,127 @@
+////////written in App.js file///////////
+
+import React from 'react';
+import Appp from './contextapi/Appp';
+
+function App() {
+  return (
+    <div className="App">
+      <Appp/>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+/////////#############there are three things u should notice
+/////1st- when everytime something is rendered useEffect comes in action
+
+///////////////written in Appp.jsx file of contextapi folder ////////
+
+
+import React, { useState, useEffect } from 'react';
+
+
+const App = () => {
+    const [num, setnum] = useState(0);
+    const [numS, setnumS] = useState(0);
+
+    useEffect(() => {
+        alert("Button is clicked")
+    });
+
+    return (
+        <>
+        <button onClick = { () => {setnum(num+1)} } >
+            click me {num}
+        </button>
+        <h1>Shubham Kumar Singh</h1>
+        <br/>
+        <button onClick = { () => {setnumS(numS+1)} } >
+            click me {numS}
+        </button>
+        <h1>Shubham Kumar Singh</h1>
+        </>
+    )
+};
+
+
+export default App;
+
+
+
+
+
+
+/////2nd- when something is rendered first time , only then useEffect comes in action
+////for that we need to include empty array as second argument in useEffect function
+
+///////////////written in Appp.jsx file of contextapi folder ////////
+
+
+import React, { useState, useEffect } from 'react';
+
+
+const App = () => {
+    const [num, setnum] = useState(0);
+    const [numS, setnumS] = useState(0);
+
+    useEffect(() => {
+        alert("Button is clicked")
+    }, []);
+
+    return (
+        <>
+        <button onClick = { () => {setnum(num+1)} } >
+            click me {num}
+        </button>
+        <h1>Shubham Kumar Singh</h1>
+        <br/>
+        <button onClick = { () => {setnumS(numS+1)} } >
+            click me {numS}
+        </button>
+        <h1>Shubham Kumar Singh</h1>
+        </>
+    )
+};
+
+
+export default App;
+
+
+/////3rd- when specific function is rendered every time , only then useEffect comes in action
+////for that we need to include that function-name(hook name) in empty array as second argument in useEffect function
+
+///////////////written in Appp.jsx file of contextapi folder ////////
+
+
+import React, { useState, useEffect } from 'react';
+
+
+const App = () => {
+    const [num, setnum] = useState(0);
+    const [numS, setnumS] = useState(0);
+
+    useEffect(() => {
+        alert("Button is clicked")
+    }, [num]);
+
+    return (
+        <>
+        <button onClick = { () => {setnum(num+1)} } >
+            click me {num}
+        </button>
+        <h1>Shubham Kumar Singh</h1>
+        <br/>
+        <button onClick = { () => {setnumS(numS+1)} } >
+            click me {numS}
+        </button>
+        <h1>Shubham Kumar Singh</h1>
+        </>
+    )
+};
+
+
+export default App;
