@@ -1,0 +1,88 @@
+///////impoer BrowserRoute, Route, Switch///////////
+
+///////written in Index.js file ///////////
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import { BrowserRouter } from 'react-router-dom';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+    <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
+
+
+///////////written in App.js file //////////////
+
+import React from 'react';
+import {Route, Switch} from 'react-router-dom';
+import About from './contextapi/About';
+import Contact from './contextapi/Contact';
+import Error from './contextapi/Error';
+
+function App() {
+
+  const Name = () => {
+    return <h1>This is Name Page</h1>;
+  };
+
+  return (
+    <div className="App">
+      <Switch>
+        <Route exact path='/' component={About}/>
+        <Route exact path='/contact' component={Contact}/>
+        <Route exact path='/contact/name' component={Name}/>
+        <Route component={Error}/>
+      </Switch>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+////////////written in About.jsx file of contextapi folder //////////////////
+
+
+import React from 'react';
+
+const About = () => {
+    return (
+        <>
+        <h1>Hello, I am a ABOUT Page</h1>
+        </>
+    )
+};
+
+export default About;
+
+
+
+
+////////////written in Contact.jsx file of contextapi folder //////////////////
+
+
+import React from 'react';
+
+const Contact = () => {
+    return (
+        <>
+        <h1>Hello, I am a CONTACT Page</h1>
+        </>
+    )
+};
+
+export default Contact;
