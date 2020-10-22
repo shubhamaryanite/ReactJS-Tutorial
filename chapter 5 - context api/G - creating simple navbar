@@ -1,0 +1,22 @@
+////////written in Navbar.jsx of contextapi folder ///////////
+
+
+import React from 'react';
+import {NavLink} from 'react-router-dom';
+
+const Navbar = () => {
+    return (
+        <>
+        <NavLink exact activeClassName="active_class" to='/'>About Us</NavLink>
+        <br/>
+        <NavLink exact activeClassName="active_class" to='/contact'>Contact</NavLink>
+        <br/>
+        <h1>below is the anchor tag used</h1>
+        <a href="/">About Us</a>
+        <br></br>
+        <a href="/contact">Contact</a>
+        </>
+    )
+};
+
+export default Navbar;
